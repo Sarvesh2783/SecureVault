@@ -1,60 +1,62 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SecureVault-A Personal Password Manager </title>
-    <link rel="stylesheet" href="style.css">
+    <title>SecureVault-A Personal Password Manager</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
-<body id>
-    <nav>
-        <div class="logo">SecureVault</div>
-        <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
-        </ul>
-    </nav>
-    <div class="container">
+<body>
+    <header>
         <h1>Password Manager</h1>
-        <p>We're thrilled to have you here. Your digital life contains a myriad of passwords, and we know how
-            challenging it can be to manage them all. That's why we're here to make it easy for you.</p>
-        <h2>Store Your Passwords <span id="alert">(Copied!)</span></h2> 
-        <table>
-            <tr>
-                <th>Website</th>
-                <th>Username</th>
-                <th>Password</th>
-                <th>Delete</th>
-            </tr> 
- 
-        </table>
+    </header>
+    <main>
+        <section id="auth-forms">
+            <article id="login-form">
+                <h2>Login</h2>
+                <form id="login">
+                    <label for="login-username">Username</label>
+                    <input type="text" id="login-username" placeholder="Enter your username" required>
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="Enter your password" required>
+                    <button type="submit">Login</button>
+                    <button type="button" id="show-register" class="link-button">Register</button>
+                </form>
+            </article>
 
-        <h2>Add a Password</h2>
-        <form action="/submit" method="post">
+            <article id="register-form" class="hidden">
+                <h2>Register</h2>
+                <form id="register">
+                    <label for="register-username">Username</label>
+                    <input type="text" id="register-username" placeholder="Enter your username" required>
+                    <label for="register-password">Password</label>
+                    <input type="password" id="register-password" placeholder="Enter your password" required>
+                    <button type="submit">Register</button>
+                    <button type="button" id="cancel-register" class="link-button">Cancel</button>
+                </form>
+            </article>
+        </section>
 
-            <!-- Text input for website -->
-            <label for="website">Website:</label>
-            <input type="text" id="website" name="website" required>
-            <br><br>
-
-            <!-- Text input for username -->
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            <br><br>
-
-            <!-- Password input -->
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <br>
-            <!-- Submit button -->
-            <button class="btn" type="submit">Submit</button>
-        </form>
-    </div>
+        <section id="data-form" class="hidden">
+            <h2>Store Data</h2>
+            <form id="store-data">
+                <label for="website">Website</label>
+                <input type="text" id="website" placeholder="Enter website name" required>
+                <label for="data-username">Username</label>
+                <input type="text" id="data-username" placeholder="Enter your username" required>
+                <label for="data-password">Password</label>
+                <input type="password" id="data-password" placeholder="Enter your password" required>
+                <label for="notes">Notes</label>
+                <textarea id="notes" placeholder="Enter any additional notes"></textarea>
+                <button type="submit">Save</button>
+            </form>
+            <h2>Stored Data</h2>
+            <ul id="data-list"></ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 A Personal Password Manager. All rights reserved.</p>
+    </footer>
     <script src="script.js"></script>
 </body>
-
 </html>
