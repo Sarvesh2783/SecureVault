@@ -1,12 +1,15 @@
-# SecureVault
-A Personal Password Manager
-Developed SecureVault, a robust and intuitive password manager, using HTML, CSS, and JavaScript. Key features and achievements include:
+# SecureVault - A Personal Password Manager
+Overview
+SecureVault is a personal password manager designed to securely store and manage login credentials. It features a user-friendly web interface built with HTML, CSS, and JavaScript for the frontend, and a robust backend using Node.js, Express, and SQL. The system ensures the secure handling of user data with encrypted storage and JWT-based authentication.
 
-
-1.Frontend Development: Designed a responsive and user-friendly interface using HTML5 and CSS3, ensuring compatibility across various devices and browsers.
-
-
-2.Backend Logic: Utilized JavaScript to implement secure storage and retrieval of passwords, incorporating encryption techniques to protect user data.
-
-
-3.Offline Functionality: Enabled offline access to stored passwords using service workers and localStorage, allowing users to manage passwords without an internet connection.
+Features
+User Authentication: Secure login and registration with hashed passwords and JWT-based token management.
+Data Management: Store, retrieve, and delete credentials for various websites.
+Secure Storage: Passwords and sensitive data are hashed and securely stored in a PostgreSQL database.
+Responsive UI: Modern, attractive frontend with seamless user experience.
+Technologies
+Frontend: HTML, CSS, JavaScript
+Backend: Node.js, Express
+Database: SQL
+Authentication: JWT (JSON Web Tokens), bcryptjs
+Environment Management: dotenv
