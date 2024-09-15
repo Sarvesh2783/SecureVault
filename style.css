@@ -1,92 +1,147 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,700;1,300&family=Poppins:wght@300;400;600&display=swap');
+/* styles.css */
 
-* {
+/* Define CSS Variables for consistency */
+:root {
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --bg-color: #f8f9fa;
+    --text-color: #212529;
+    --border-color: #ced4da;
+    --input-padding: 12px;
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+}
+
+/* Global Styles */
+body {
+    font-family: var(--font-family);
     margin: 0;
     padding: 0;
-    font-family: 'Noto Sans', sans-serif;
-    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-nav {
-    background-color: black;
-    color: white;
-    padding: 12px 3px;
-    display: flex;
-    justify-content: space-between;
-}
-.btn:hover{
-color:rgb(57,255,0);
-}
-.logo{
-    margin: 0 23px;
-    font-weight: 800;
-    font-size: 25px;
-    cursor: pointer;
+header {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
 }
 
-ul {
+main {
+    flex: 1;
+    padding: 20px;
     display: flex;
-    margin: 0 23px;
+    flex-direction: column;
     align-items: center;
 }
-ul>li:hover{
-    color:rgb(57,255,0);
+
+footer {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
 }
-ul > li {
+
+/* Form Styles */
+form {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: calc(100% - 2 * var(--input-padding));
+    padding: var(--input-padding);
+    margin: 5px 0;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    transition: border-color var(--transition-speed);
+}
+
+input:focus, textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+button {
+    padding: var(--input-padding);
+    margin: 5px 0;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 16px;
+    transition: background-color var(--transition-speed);
+}
+
+button:hover {
+    background-color: darken(var(--primary-color), 10%);
+}
+
+.link-button {
+    background: none;
+    color: var(--primary-color);
+    font-size: 14px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.link-button:hover {
+    text-decoration: none;
+}
+
+/* Data List Styles */
+#data-list {
     list-style: none;
-    margin: 0 13px;
-    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    width: 100%;
 }
 
-ul > li:hover{
-    color: white;
-
+#data-list li {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-table, td, tr{
-    border: 2px solid black;
-    border-collapse: collapse;
-    padding: 5px 13px;
+#data-list li button {
+    align-self: flex-start;
+    background: var(--secondary-color);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-speed);
 }
 
-.container {
-    max-width: 80vw;
-    margin: 23px auto;
+#data-list li button:hover {
+    background: darken(var(--secondary-color), 10%);
 }
 
-h1, h2, h3 {
-    margin: 23px 0;
-}
-
-.btn{
-    padding: 8px 17px;
-    background: black;
-    color: white;
-    font-weight: 900;
-    border: 2px solid gray;
-    border-radius: 8px;
-    margin: 25px 0;
-    cursor: pointer;
-}
-
-.btnsm{ 
-    padding: 8px 17px;
-    background: black;
-    color: white;
-    font-weight: 900;
-    border: 2px solid gray;
-    border-radius: 8px; 
-    cursor: pointer;
-}
-
-img{
-    cursor: pointer;
-    position: relative;
-    bottom: 7px;
-    width: 15px;
-    height: 13px;
-}
-
-#alert{
-    display: none;
+/* Responsive Design */
+@media (max-width: 600px) {
+    input, textarea, button {
+        font-size: 14px;
+    }
 }
